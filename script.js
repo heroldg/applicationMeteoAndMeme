@@ -25,7 +25,7 @@ buttonGif.onclick = function () {
     };
     req.send();
 
-    fetch('https://api.giphy.com/v 1/gifs/search?api_key=aFFKTuSMjd6j0wwjpFCPXZipQbcnw3vB&fmt=json&limit=20&q=' + search)
+    fetch('https://api.giphy.com/v1/gifs/search?api_key=aFFKTuSMjd6j0wwjpFCPXZipQbcnw3vB&fmt=json&limit=20&q=' + search)
         .then(function (response) {
             return response.json();
         })
@@ -54,9 +54,29 @@ buttonMeteo.onclick = function () {
         .then(function (json) {
             let html = `
                 <div>
+                   
+                    <div>
                     Aujourd'hui: ${json.description} ${json.temperature}<br>
-                    Demain: ${json.forecast[0].temperature}<br>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    Demain:  ${json.forecast[0].temperature}<br>
+                    </div>
+
+                    <hr>
+                   
+                    <div>
                     Dans 2 jours: ${json.forecast[1].temperature}<br>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    Dans 3 jours: ${json.forecast[2].temperature}<br>
+                    </div>
+
                 </div>
             `;
             meteoDiv.innerHTML = html;

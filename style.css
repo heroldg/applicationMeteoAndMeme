@@ -32,6 +32,23 @@ body {
     margin: auto;
 }
 
+
+@keyframes rain {
+    0% {
+      top: -10px;
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+  
+  .raindrop {
+    position: relative;
+    animation: rain 3s linear infinite;
+  }
+  
 #search-meteo #buttonMeteo , #buttonGif {
     
     border-radius:  10px;
@@ -43,11 +60,16 @@ body {
     display: flex;
     gap: 5px;
     padding: 1pc;
+    position: relative;
+    animation: rain 3s linear;
+ 
 }
 
 #meteo-result div {
     margin-top: 10px;
     padding: 10px;
-    background-color: wheat;
+    width: 100%;
+    background-color: rgb(179, 245, 242);
     margin: auto;
+    display: flex;
 }
